@@ -218,7 +218,7 @@ The DNS tunneling activity maps to **T1071.004 - Application Layer Protocol: DNS
 3. **Preserve** PCAP and endpoint memory image for forensic investigation
 4. **Scan** environment for additional endpoints with DNS queries to `*.h.dns.steasteel.net`
 5. **Review** PowerShell execution logs on affected endpoint
-6. **Check** for lateral movement — Pikabot is known to deliver secondary payloads
+6. **Check** for lateral movement - Pikabot is known to deliver secondary payloads
 
 ---
 
@@ -229,7 +229,7 @@ The DNS tunneling activity maps to **T1071.004 - Application Layer Protocol: DNS
 | Wireshark | PCAP analysis, protocol filtering, HTTP object export |
 | `file` | File type identification via magic bytes |
 | `sha256sum` | Hash computation for threat intelligence lookup |
-| VirusTotal | IOC reputation — URL, file hash, domain |
+| VirusTotal | IOC reputation - URL, file hash, domain |
 | MITRE ATT&CK | Technique mapping |
 
 ---
