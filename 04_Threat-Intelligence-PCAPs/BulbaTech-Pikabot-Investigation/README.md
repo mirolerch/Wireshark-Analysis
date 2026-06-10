@@ -53,7 +53,7 @@ The first DNS query in the capture originated from `172.16.1.191` (DNS server) t
 ![First DNS Query](screenshots/03_domain_name_queried.png)
 ![DNS Query Response](screenshots/04_domain_name_query_response.png)
 
-**VirusTotal — webmasterdev.com:** 8/92 vendors flagged this URL as malicious. URLhaus identified it as a malware payload delivery host.
+**VirusTotal - webmasterdev.com:** 8/92 vendors flagged this URL as malicious. URLhaus identified it as a malware payload delivery host.
 
 ![VirusTotal webmasterdev](screenshots/virustotal_webmasterdev.png)
 
