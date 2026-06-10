@@ -51,7 +51,7 @@ The first DNS query resolved `webmasterdev.com` to `184.168.98.68`.
 ![First DNS Query](screenshots/03_domain_name_queried.png)
 ![DNS Query Response](screenshots/04_domain_name_query_response.png)
 
-**VirusTotal — webmasterdev.com:** 8/92 vendors flagged as malicious - identified as malware payload delivery host.
+**VirusTotal - webmasterdev.com:** 8/92 vendors flagged as malicious - identified as malware payload delivery host.
 
 [![VirusTotal webmasterdev](screenshots/virustotal_webmasterdev.png)](https://www.virustotal.com/gui/url/d3216c988645b87d229420c0b297919d50762b18febcd88b005bc7910a7c2560/detection)
 🔗 [View on VirusTotal](https://www.virustotal.com/gui/url/d3216c988645b87d229420c0b297919d50762b18febcd88b005bc7910a7c2560/detection)
