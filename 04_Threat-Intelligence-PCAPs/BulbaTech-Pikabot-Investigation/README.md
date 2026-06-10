@@ -59,7 +59,7 @@ The first DNS query in the capture originated from `172.16.1.191` (DNS server) t
 
 ---
 
-### Step 3 — HTTP Traffic Analysis
+### Step 3 - HTTP Traffic Analysis
 
 Filter: `http`
 
