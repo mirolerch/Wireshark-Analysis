@@ -79,7 +79,7 @@ The server responded with `HTTP/1.1 200 OK` delivering a file with `Content-Type
 
 **VirusTotal - download URL:** 9/91 vendors flagged `hxxp[://]162[.]252[.]172[.]54/9GQ5A8/6ctf5JL` as malicious. Crowdsourced context confirmed activity related to **PIKABOT**.
 
-![VirusTotal URL](virustotal_url.png)
+![VirusTotal URL](screenshots/virustotal_url.png)
 
 ---
 
@@ -89,7 +89,7 @@ The server responded with `HTTP/1.1 200 OK` delivering a file with `Content-Type
 
 The exported file `6ctf5JL` was listed as `image/gif` (1,288 kB) from `162.252.172.54`.
 
-![Export Objects](export_objects.png)
+![Export Objects](screenshots/export_objects.png)
 
 File identification via command line revealed the true nature of the file:
 
@@ -101,9 +101,9 @@ sha256sum 6ctf5JL
 # 9b8ffdc8ba2b2caa485cca56a82b2dcbd251f65fb30bc88f0ac3da6704e4d3c6
 ```
 
-![File Signature](08_file_signature_or_magic_bytes.png)
-![SHA256 Hash](10_sha256_hash.png)
-![Command Line Utility](09_command_line_utility.png)
+![File Signature](screenshots/08_file_signature_or_magic_bytes.png)
+![SHA256 Hash](screenshots/10_sha256_hash.png)
+![Command Line Utility](screenshots/09_command_line_utility.png)
 
 The magic bytes `4D 5A` (MZ header) confirm this is a Windows PE executable — not a GIF image.
 
@@ -113,7 +113,7 @@ The magic bytes `4D 5A` (MZ header) confirm this is a Windows PE executable — 
 - Family labels: `pikabot`, `mikey`, `zenpak`
 - Behaviors: `pedll`, `spreader`, `persistence`, `detect-debug-environment`
 
-![VirusTotal File](virustotal_file.png)
+![VirusTotal File](screenshots/virustotal_file.png)
 
 ---
 
@@ -121,7 +121,7 @@ The magic bytes `4D 5A` (MZ header) confirm this is a Windows PE executable — 
 
 The downloaded file is **Pikabot** - a modular Windows trojan and loader active since 2023, known for delivering secondary payloads including Cobalt Strike, ransomware, and other post-exploitation tools.
 
-![Type of Malware](11_type_of_malware.png)
+![Type of Malware](screenshots/11_type_of_malware.png)
 
 ---
 
@@ -142,8 +142,8 @@ faa.h.dns.steasteel.net
 
 This sequential subdomain pattern is characteristic of **DNS tunneling** - data exfiltration or C2 communication encoded within DNS TXT record queries.
 
-![UDP DNS Traffic](12_majority_of_UDP.png)
-![DNS Domain Names Queried](13_domain_names_queried.png)
+![UDP DNS Traffic](screenshots/12_majority_of_UDP.png)
+![DNS Domain Names Queried](screenshots/13_domain_names_queried.png)
 
 **VirusTotal — steasteel.net:** 4/92 vendors flagged this domain as malicious.
 
@@ -157,7 +157,7 @@ The DNS tunneling activity maps to **T1071.004 - Application Layer Protocol: DNS
 
 > Adversaries may communicate using DNS to avoid detection by blending in with normal traffic. Commands and data are embedded within DNS TXT records.
 
-![MITRE T1071.004](14_T1071_004.png)
+![MITRE T1071.004](screenshots/14_T1071_004.png)
 
 ---
 
