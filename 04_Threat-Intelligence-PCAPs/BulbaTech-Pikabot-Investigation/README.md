@@ -1,4 +1,4 @@
-# BulbaTech Innovations — DNS Tunneling & Pikabot Investigation
+# BulbaTech Innovations - DNS Tunneling & Pikabot Investigation
 
 **Scenario:** The SOC at BulbaTech Innovations received an alert of abnormal traffic patterns and a high number of repeated DNS queries originating from endpoint `172.16.1.16`.
 
@@ -10,7 +10,7 @@
 
 ## Executive Summary
 
-Analysis of the packet capture revealed that endpoint `172.16.1.16` was compromised and actively communicating with malicious infrastructure. The endpoint downloaded a malicious PE32 executable disguised as an `image/gif` file from a known malware payload delivery host. The file was confirmed as **Pikabot** — a modular trojan — by 55 out of 67 security vendors on VirusTotal. Additionally, the endpoint exhibited DNS tunneling behavior, generating a high volume of TXT record queries to `*.h.dns.steasteel.net`, consistent with MITRE ATT&CK technique **T1071.004 — Application Layer Protocol: DNS**.
+Analysis of the packet capture revealed that endpoint `172.16.1.16` was compromised and actively communicating with malicious infrastructure. The endpoint downloaded a malicious PE32 executable disguised as an `image/gif` file from a known malware payload delivery host. The file was confirmed as **Pikabot** — a modular trojan — by 55 out of 67 security vendors on VirusTotal. Additionally, the endpoint exhibited DNS tunneling behavior, generating a high volume of TXT record queries to `*.h.dns.steasteel.net`, consistent with MITRE ATT&CK technique **T1071.004 - Application Layer Protocol: DNS**.
 
 **Risk Rating:** 🔴 Critical
 
@@ -34,7 +34,7 @@ Analysis of the packet capture revealed that endpoint `172.16.1.16` was compromi
 
 ## Investigation Walkthrough
 
-### Step 1 — Set Time Display to UTC
+### Step 1 - Set Time Display to UTC
 
 To correlate findings with threat intelligence and log sources, timestamps were converted to UTC format.
 
@@ -44,7 +44,7 @@ To correlate findings with threat intelligence and log sources, timestamps were 
 
 ---
 
-### Step 2 — First DNS Query
+### Step 2 - First DNS Query
 
 Filter: `dns`
 
@@ -71,19 +71,19 @@ User-Agent: Mozilla/5.0 (Windows NT; Windows NT 10.0; en-US) WindowsPowerShell/5
 Host: 162.252.172.54
 ```
 
-The server responded with `HTTP/1.1 200 OK` delivering a file with `Content-Type: image/gif` — a classic polyglot file technique used to disguise malicious executables as image files.
+The server responded with `HTTP/1.1 200 OK` delivering a file with `Content-Type: image/gif` - a classic polyglot file technique used to disguise malicious executables as image files.
 
 ![HTTP Packets](05_http_packets.png)
 ![Relative Path](06_relative_path.png)
 ![File Type GIF](07_file_type_or_format.png)
 
-**VirusTotal — download URL:** 9/91 vendors flagged `hxxp[://]162[.]252[.]172[.]54/9GQ5A8/6ctf5JL` as malicious. Crowdsourced context confirmed activity related to **PIKABOT**.
+**VirusTotal - download URL:** 9/91 vendors flagged `hxxp[://]162[.]252[.]172[.]54/9GQ5A8/6ctf5JL` as malicious. Crowdsourced context confirmed activity related to **PIKABOT**.
 
 ![VirusTotal URL](virustotal_url.png)
 
 ---
 
-### Step 4 — File Export & Analysis
+### Step 4 - File Export & Analysis
 
 `File → Export Objects → HTTP`
 
@@ -107,7 +107,7 @@ sha256sum 6ctf5JL
 
 The magic bytes `4D 5A` (MZ header) confirm this is a Windows PE executable — not a GIF image.
 
-**VirusTotal — SHA256:** 55/67 vendors detected the file as malicious.
+**VirusTotal - SHA256:** 55/67 vendors detected the file as malicious.
 
 - Popular threat label: `trojan.pikabot/mikey`
 - Family labels: `pikabot`, `mikey`, `zenpak`
@@ -117,7 +117,7 @@ The magic bytes `4D 5A` (MZ header) confirm this is a Windows PE executable — 
 
 ---
 
-### Step 5 — Malware Identification
+### Step 5 - Malware Identification
 
 The downloaded file is **Pikabot** — a modular Windows trojan and loader active since 2023, known for delivering secondary payloads including Cobalt Strike, ransomware, and other post-exploitation tools.
 
@@ -125,7 +125,7 @@ The downloaded file is **Pikabot** — a modular Windows trojan and loader activ
 
 ---
 
-### Step 6 — DNS Tunneling (C2 via DNS)
+### Step 6 - DNS Tunneling (C2 via DNS)
 
 Filter: `udp`
 
@@ -140,7 +140,7 @@ eaa.h.dns.steasteel.net
 faa.h.dns.steasteel.net
 ```
 
-This sequential subdomain pattern is characteristic of **DNS tunneling** — data exfiltration or C2 communication encoded within DNS TXT record queries.
+This sequential subdomain pattern is characteristic of **DNS tunneling** - data exfiltration or C2 communication encoded within DNS TXT record queries.
 
 ![UDP DNS Traffic](12_majority_of_UDP.png)
 ![DNS Domain Names Queried](13_domain_names_queried.png)
@@ -151,9 +151,9 @@ This sequential subdomain pattern is characteristic of **DNS tunneling** — dat
 
 ---
 
-### Step 7 — MITRE ATT&CK Mapping
+### Step 7 - MITRE ATT&CK Mapping
 
-The DNS tunneling activity maps to **T1071.004 — Application Layer Protocol: DNS** under the Command and Control tactic.
+The DNS tunneling activity maps to **T1071.004 - Application Layer Protocol: DNS** under the Command and Control tactic.
 
 > Adversaries may communicate using DNS to avoid detection by blending in with normal traffic. Commands and data are embedded within DNS TXT records.
 
@@ -170,7 +170,7 @@ The DNS tunneling activity maps to **T1071.004 — Application Layer Protocol: D
 | 3 | Malicious download URL | `hxxp[://]162[.]252[.]172[.]54/9GQ5A8/6ctf5JL` |
 | 4 | File disguise | `image/gif` (Content-Type) — actual PE32 DLL |
 | 5 | File hash (SHA256) | `9b8ffdc8ba2b2caa485cca56a82b2dcbd251f65fb30bc88f0ac3da6704e4d3c6` |
-| 6 | Malware identified | Pikabot (trojan.pikabot/mikey) — 55/67 VT detections |
+| 6 | Malware identified | Pikabot (trojan.pikabot/mikey) - 55/67 VT detections |
 | 7 | C2 protocol | DNS tunneling via TXT records to `*.h.dns.steasteel.net` |
 | 8 | MITRE technique | T1071.004 — Application Layer Protocol: DNS |
 
@@ -186,7 +186,7 @@ The DNS tunneling activity maps to **T1071.004 — Application Layer Protocol: D
 | Domain | `steasteel[.]net` | DNS tunneling C2 domain (4/92 VT) |
 | URL | `hxxp[://]162[.]252[.]172[.]54/9GQ5A8/6ctf5JL` | Pikabot download URL (9/91 VT) |
 | SHA256 | `9b8ffdc8ba2b2caa485cca56a82b2dcbd251f65fb30bc88f0ac3da6704e4d3c6` | Pikabot DLL (55/67 VT) |
-| Filename | `6ctf5JL` | Disguised as image/gif — PE32 DLL |
+| Filename | `6ctf5JL` | Disguised as image/gif - PE32 DLL |
 
 ---
 
@@ -195,7 +195,7 @@ The DNS tunneling activity maps to **T1071.004 — Application Layer Protocol: D
 | Technique | ID | Tactic |
 |-----------|----|--------|
 | Application Layer Protocol: DNS | T1071.004 | Command and Control |
-| Masquerading — Match Legitimate Name or Location | T1036 | Defense Evasion |
+| Masquerading - Match Legitimate Name or Location | T1036 | Defense Evasion |
 | Ingress Tool Transfer | T1105 | Command and Control |
 
 ---
