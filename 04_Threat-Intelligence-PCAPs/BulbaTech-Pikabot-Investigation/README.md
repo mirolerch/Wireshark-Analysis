@@ -81,7 +81,7 @@ Host: 162.252.172.54
 
 ---
 
-### Step 4 — File Export & Analysis
+### Step 4 - File Export & Analysis
 
 `File → Export Objects → HTTP`
 
