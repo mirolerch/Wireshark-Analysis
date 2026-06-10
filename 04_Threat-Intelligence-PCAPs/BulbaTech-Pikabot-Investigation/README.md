@@ -77,6 +77,7 @@ Host: 162.252.172.54
 **VirusTotal - download URL:** 9/91 vendors flagged as malicious. Crowdsourced context confirmed activity related to **PIKABOT**.
 
 [![VirusTotal URL](screenshots/virustotal_url.png)](https://www.virustotal.com/gui/url/9d422a05fb685f7865db4bcae28921e39eb5ced9e9e1cdda5b4efda9934f5789)
+🔗 [View on VirusTotal](https://www.virustotal.com/gui/url/9d422a05fb685f7865db4bcae28921e39eb5ced9e9e1cdda5b4efda9934f5789)
 
 ---
 
@@ -106,6 +107,7 @@ The magic bytes `4D 5A` (MZ header) confirm this is a Windows PE executable — 
 - Behaviors: `pedll`, `spreader`, `persistence`, `detect-debug-environment`
 
 [![VirusTotal File](screenshots/virustotal_file.png)](https://www.virustotal.com/gui/file/9b8ffdc8ba2b2caa485cca56a82b2dcbd251f65fb30bc88f0ac3da6704e4d3c6/detection)
+🔗 [View on VirusTotal](https://www.virustotal.com/gui/file/9b8ffdc8ba2b2caa485cca56a82b2dcbd251f65fb30bc88f0ac3da6704e4d3c6/detection)
 
 ---
 
@@ -137,6 +139,7 @@ daa.h.dns.steasteel.net
 **VirusTotal - steasteel.net:** 4/92 vendors flagged as malicious.
 
 [![VirusTotal steasteel](screenshots/virustotal_steasteel.png)](https://www.virustotal.com/gui/url/9d422a05fb685f7865db4bcae28921e39eb5ced9e9e1cdda5b4efda9934f5789)
+🔗 [View on VirusTotal](https://www.virustotal.com/gui/url/9d422a05fb685f7865db4bcae28921e39eb5ced9e9e1cdda5b4efda9934f5789)
 
 ---
 
@@ -147,6 +150,7 @@ The DNS tunneling activity maps to **[T1071.004 - Application Layer Protocol: DN
 > Adversaries may communicate using DNS to avoid detection by blending in with normal traffic. Commands and data are embedded within DNS TXT records.
 
 [![MITRE T1071.004](screenshots/14_T1071_004.png)](https://attack.mitre.org/techniques/T1071/004/)
+🔗 [View on MITRE ATT&CK](https://attack.mitre.org/techniques/T1071/004/)
 
 ---
 
