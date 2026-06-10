@@ -147,7 +147,7 @@ This sequential subdomain pattern is characteristic of **DNS tunneling** - data 
 
 **VirusTotal — steasteel.net:** 4/92 vendors flagged this domain as malicious.
 
-![VirusTotal steasteel](virustotal_steasteel.png)
+![VirusTotal steasteel](screenshots/virustotal_steasteel.png)
 
 ---
 
