@@ -28,7 +28,7 @@ Analysis of the packet capture revealed that endpoint `172.16.1.16` was compromi
 | Total packets | 39,106 |
 | SHA256 (pcap) | `cde5c8ab5797894820b40a7f9038766863aa48c3f8614abe7b2b2d205a72863c` |
 
-![PCAP File Properties](02_file_properties.png)
+![PCAP File Properties](screenshots/02_file_properties.png)
 
 ---
 
@@ -40,7 +40,7 @@ To correlate findings with threat intelligence and log sources, timestamps were 
 
 `View → Time Display Format → UTC Date and Time of Day`
 
-![UTC Time Display](01_utc_time.png)
+![UTC Time Display](screenshots/01_utc_time.png)
 
 ---
 
@@ -50,12 +50,12 @@ Filter: `dns`
 
 The first DNS query in the capture originated from `172.16.1.191` (DNS server) to `172.16.1.16` (endpoint), resolving `webmasterdev.com` to `184.168.98.68`.
 
-![First DNS Query](03_domain_name_queried.png)
-![DNS Query Response](04_domain_name_query_response.png)
+![First DNS Query](screenshots/03_domain_name_queried.png)
+![DNS Query Response](screenshots/04_domain_name_query_response.png)
 
 **VirusTotal — webmasterdev.com:** 8/92 vendors flagged this URL as malicious. URLhaus identified it as a malware payload delivery host.
 
-![VirusTotal webmasterdev](virustotal_webmasterdev.png)
+![VirusTotal webmasterdev](screenshots/virustotal_webmasterdev.png)
 
 ---
 
@@ -73,9 +73,9 @@ Host: 162.252.172.54
 
 The server responded with `HTTP/1.1 200 OK` delivering a file with `Content-Type: image/gif` - a classic polyglot file technique used to disguise malicious executables as image files.
 
-![HTTP Packets](05_http_packets.png)
-![Relative Path](06_relative_path.png)
-![File Type GIF](07_file_type_or_format.png)
+![HTTP Packets](screenshots/05_http_packets.png)
+![Relative Path](screenshots/06_relative_path.png)
+![File Type GIF](screenshots/07_file_type_or_format.png)
 
 **VirusTotal - download URL:** 9/91 vendors flagged `hxxp[://]162[.]252[.]172[.]54/9GQ5A8/6ctf5JL` as malicious. Crowdsourced context confirmed activity related to **PIKABOT**.
 
