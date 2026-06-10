@@ -119,7 +119,7 @@ The magic bytes `4D 5A` (MZ header) confirm this is a Windows PE executable — 
 
 ### Step 5 - Malware Identification
 
-The downloaded file is **Pikabot** — a modular Windows trojan and loader active since 2023, known for delivering secondary payloads including Cobalt Strike, ransomware, and other post-exploitation tools.
+The downloaded file is **Pikabot** - a modular Windows trojan and loader active since 2023, known for delivering secondary payloads including Cobalt Strike, ransomware, and other post-exploitation tools.
 
 ![Type of Malware](11_type_of_malware.png)
 
