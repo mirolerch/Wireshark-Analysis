@@ -10,7 +10,7 @@
 
 ## Executive Summary
 
-Analysis of the packet capture revealed that endpoint `172.16.1.16` was compromised and actively communicating with malicious infrastructure. The endpoint downloaded a malicious PE32 executable disguised as an `image/gif` file from a known malware payload delivery host. The file was confirmed as **Pikabot** — a modular trojan — by 55 out of 67 security vendors on VirusTotal. Additionally, the endpoint exhibited DNS tunneling behavior, generating a high volume of TXT record queries to `*.h.dns.steasteel.net`, consistent with MITRE ATT&CK technique **T1071.004 - Application Layer Protocol: DNS**.
+Analysis of the packet capture revealed that endpoint `172.16.1.16` was compromised and actively communicating with malicious infrastructure. The endpoint downloaded a malicious PE32 executable disguised as an `image/gif` file from a known malware payload delivery host. The file was confirmed as **Pikabot** - a modular trojan - by 55 out of 67 security vendors on VirusTotal. Additionally, the endpoint exhibited DNS tunneling behavior, generating a high volume of TXT record queries to `*.h.dns.steasteel.net`, consistent with MITRE ATT&CK technique **T1071.004 - Application Layer Protocol: DNS**.
 
 **Risk Rating:** 🔴 Critical
 
