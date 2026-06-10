@@ -168,7 +168,7 @@ The DNS tunneling activity maps to **T1071.004 - Application Layer Protocol: DNS
 | 1 | Compromised endpoint | `172.16.1.16` |
 | 2 | First DNS query | `webmasterdev.com` → `184.168.98.68` |
 | 3 | Malicious download URL | `hxxp[://]162[.]252[.]172[.]54/9GQ5A8/6ctf5JL` |
-| 4 | File disguise | `image/gif` (Content-Type) — actual PE32 DLL |
+| 4 | File disguise | `image/gif` (Content-Type) - actual PE32 DLL |
 | 5 | File hash (SHA256) | `9b8ffdc8ba2b2caa485cca56a82b2dcbd251f65fb30bc88f0ac3da6704e4d3c6` |
 | 6 | Malware identified | Pikabot (trojan.pikabot/mikey) - 55/67 VT detections |
 | 7 | C2 protocol | DNS tunneling via TXT records to `*.h.dns.steasteel.net` |
