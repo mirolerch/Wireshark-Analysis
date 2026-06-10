@@ -116,6 +116,7 @@ The magic bytes `4D 5A` (MZ header) confirm this is a Windows PE executable — 
 The downloaded file is **Pikabot** - a modular Windows trojan and loader active since 2023.
 
 ![Type of Malware](screenshots/11_type_of_malware.png)
+🔗 [Pikabot on Malpedia](https://malpedia.caad.fkie.fraunhofer.de/details/win.pikabot)
 
 ---
 
@@ -138,8 +139,8 @@ daa.h.dns.steasteel.net
 
 **VirusTotal - steasteel.net:** 4/92 vendors flagged as malicious.
 
-[![VirusTotal steasteel](screenshots/virustotal_steasteel.png)](https://www.virustotal.com/gui/url/9d422a05fb685f7865db4bcae28921e39eb5ced9e9e1cdda5b4efda9934f5789)
-🔗 [View on VirusTotal](https://www.virustotal.com/gui/url/9d422a05fb685f7865db4bcae28921e39eb5ced9e9e1cdda5b4efda9934f5789)
+[![VirusTotal steasteel](screenshots/virustotal_steasteel.png)](https://www.virustotal.com/gui/url/1b783ecf01d7e6d41adec1c2654e98f1a3f99b2d3f08db874320fd2c8ae0dfa3)
+🔗 [View on VirusTotal](https://www.virustotal.com/gui/url/1b783ecf01d7e6d41adec1c2654e98f1a3f99b2d3f08db874320fd2c8ae0dfa3)
 
 ---
 
